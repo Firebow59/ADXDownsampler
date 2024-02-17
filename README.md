@@ -3,15 +3,28 @@
 
 ## Features
 - Custom sample rates and audio bitrate options
-- Choose whether to downsample to mono or stereo
-- Can batch downsample ADX files
+- Option to put audio in mono
+- Keeps loop from original file
+- Can downsample a single or batch of ADX files
+- CMD support (by running ADXdownsampler.exe in a command line)
 
-## Planned Features (in future updates)
-- Support for v4 ADXs
-- More options on GUI
-- AIX audio support?
+## CMD commands
+If you do wish to use this program as a command line program, here are the options:
+
+    -i:             input file/directory
+    -samplerate:    sample rate of output file(s)
+    -audiobitrate   bitrate of output file(s)
+    -mono:          Forces output file(s) to mono
+    -copyskipped:   Copies skipped file(s) to output folder (b/c the output sample rate was greater than the sample rate of the original file)
+    -overwrite:     Auto overwrites file(s) in out folder
+
+Example command (batch downsample) - Every ADX file in "C:\ADX" would be downsampled to 32000Hz mono.
+
+    adxdownsampler.exe -i "C:\ADX" -samplerate 32000 -mono 
 
 ## Programs included in ADXDownsampler
 [SoX](https://sourceforge.net/projects/sox/)
 
 [VGMStream](https://vgmstream.org/)
+
+adxencd.exe from CRI Middleware
